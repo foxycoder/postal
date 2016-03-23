@@ -1,8 +1,12 @@
 <div class="col-xs-8">
    <p>
       <h4><%= post.content %></h4>
-      <em>
-        <%= link_to post.user.handle, user_posts_path( post.user ) %>
-      </em>
+
+      <%= link_to "ツ", post_likes_path( post ), method: :post, class: "btn btn-warning btn-xs" %>
+      <%= post.likes.count %>
+
+      &nbsp
+
+      <em><%= link_to post.user.handle, user_posts_path( post.user ) %></em>
    </p>
 </div>
