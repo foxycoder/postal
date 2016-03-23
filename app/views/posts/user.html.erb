@@ -1,0 +1,7 @@
+<h1><%= @user.handle %></h1>
+
+<br>
+
+<% @posts.each do |post| %>
+   <h4><%= post.content %></h4>
+<% end %>

@@ -2,7 +2,7 @@
    <p>
       <h4><%= post.content %></h4>
       <em>
-        <%= post.user.handle %>
+        <%= link_to post.user.handle, user_posts_path( post.user ) %>
       </em>
    </p>
 </div>
