@@ -1,3 +1,6 @@
+frank = User.create( email: 'frank@ex.com', password: 'abcd1234', password_confirmation: 'abcd1234' )
+alice = User.create( email: 'alice@ex.com', password: 'abcd1234', password_confirmation: 'abcd1234' )
+
 Post.create( content: "Pizza is yummy!"                    )
 Post.create( content: "Veggies are tasty and nutritious."  )
 Post.create( content: "Salt is the best ingredient."       )
