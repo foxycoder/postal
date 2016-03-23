@@ -7,7 +7,7 @@ Post.create( content: "Walking Dead has an exciting plot." )
 Post.create( content: "I only watch art-house films."      )
 
 Post.create( content: "My cats are cute!"      )
-Post.create( content: "Dogs are good frieds."  )
+Post.create( content: "Dogs are good friends."  )
 Post.create( content: "My hamster resents me." )
 
 Post.create( content: "Free market solves all problems."         )
