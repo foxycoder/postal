@@ -1,6 +1,7 @@
-<%= render "form" %>
-
-<br>
+<% if user_signed_in? %>
+   <%= render "form" %>
+   <br>
+<% end %>
 
 <%= render @posts %>
 
