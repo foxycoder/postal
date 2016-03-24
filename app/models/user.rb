@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
+  has_many :likes
 
   def handle
     self.email.split('@')[0]
