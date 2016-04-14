@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def user
      @user = User.find( params[:user_id] )
 
-     @posts = Post.where( user: @user ).sort_by { |post| post.created_at }.reverse
+     @posts = Post.where( user: @user ).order( created_at: :desc )
 
      @likes = @user.likes.sort_by { |like| like.post.created_at }.reverse
   end
