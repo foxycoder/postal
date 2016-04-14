@@ -580,7 +580,7 @@ Create Like action.
 
 Note that the new like is attributed to the current user.
 
-`app/controllers/likes.rb`
+`app/controllers/likes_controller.rb`
 
 ```ruby
 class LikesController < ApplicationController
@@ -681,13 +681,17 @@ class PostsController < ApplicationController
   def user
      @user = User.find( params[:user_id] )
 
-     @posts = Post.where( user: @user ).sort_by { |post| post.created_at }.reverse
+     @posts = Post.where( user: @user ).order( created_at: :desc )
 
-     @likes = @user.likes.sort_by { |like| like.post.created_at }.reverse
+     @likes = @user.likes.joins( :post ).order( "posts.created_at DESC" )
   end
 
 end
 ```
+
+What does the `joins` method do above?  It joins each Like to its corresponding Post, and gives us the posts in a list.
+
+<br>
 
 View of User's posts.
 
