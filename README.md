@@ -1,6 +1,8 @@
 Web Application where Users make posts and like other user's posts.
 
-Purpose: Illustrate buidling an application with Users & Authentication from Devise.
+Purpose: Illustrate building an application with Users & Authentication from Devise.
+
+For later reference, complete source can be found on github at [https://github.com/gandjhar/postal](https://github.com/gandjhar/postal)
 
 <br>
 <img src="http://cd.sseu.re/postal/like-post.png" width="600px" />
@@ -183,7 +185,7 @@ main {
 
 ## New Post Form
 
-Form in index view to add new Post.
+Create a form to add new Post.
 
 `app/views/posts/_form.html.erb`
 
@@ -194,6 +196,17 @@ Form in index view to add new Post.
       <div class="col-xs-4"><%= f.submit "Create", class: "btn" %></div>
     </div>
 <% end %>
+```
+
+Add the form to the index view so that it appears above the old posts.
+
+`app/views/posts/index.html.erb`
+
+```html
+<%= render "form" %>
+<br>
+
+<%= render @posts %>
 ```
 
 Also position the posts to align with form.
@@ -230,15 +243,15 @@ Can now add new posts!
 
 <img src="http://cd.sseu.re/postal/new-post.png" width="600px" />
 
-## Sort Posts
+## Post Order
 
-Sort posts so that most recent appears on top.
+Order posts so that most recent appears on top.
 
 ```ruby
 class PostsController < ApplicationController
 
   def index
-     @posts = Post.all.sort_by { |post| post.created_at }.reverse
+     @posts = Post.order( created_at: :desc )
   end
 
 end
