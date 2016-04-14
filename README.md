@@ -113,6 +113,8 @@ end
 
 Add Bootstap to make app look nice.
 
+Add the bootstrap-sass gem to the Gemfile.
+
 `Gemfile`
 
 ```ruby
@@ -120,7 +122,11 @@ Add Bootstap to make app look nice.
 gem 'bootstrap-sass', '~> 3.3.6'
 ```
 
-`app/assets/stylesheets/application.scss [note extension changed from .css to .scss]`
+Import the bootstrap css files by adding the lines below.  Do not delete what is already in the file, if anything.
+
+Also **change the extention** of `application.css` to `.scss`
+
+`app/assets/stylesheets/application.scss`
 
 ```ruby
 # ...
@@ -128,6 +134,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 @import "bootstrap";
 ```
 
+Add bootstrap-sprockets to the application javascript file.  Looks like comments, but it is really a **manifest** 
+that is processed by Rails.  *Do not delete the other entries in the manifest.*
+ 
 `app/assets/javascript/application.js`
 
 ```ruby
