@@ -1,9 +1,9 @@
 Post.delete_all
 User.delete_all
 
-frank = User.create( email: 'frank@ex.com', password: 'abcd1234', password_confirmation: 'abcd1234' )
-alice = User.create( email: 'alice@ex.com', password: 'abcd1234', password_confirmation: 'abcd1234' )
-anton = User.create( email: 'anton@ex.com', password: 'abcd1234', password_confirmation: 'abcd1234' )
+frank = User.create( email: 'frank@ex.com', password: 'abcd1234' )
+alice = User.create( email: 'alice@ex.com', password: 'abcd1234' )
+anton = User.create( email: 'anton@ex.com', password: 'abcd1234' )
 
 Post.create( content: "Pizza is yummy!"                   , user: frank )
 Post.create( content: "Veggies are tasty and nutritious." , user: alice )
