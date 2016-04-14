@@ -396,6 +396,8 @@ Add user to each seed post.
 `db/seeds.rb`
 
 ```ruby
+Post.delete_all
+
 Post.create( content: "Pizza is yummy!"                   , user: frank )
 Post.create( content: "Veggies are tasty and nutritious." , user: alice )
 Post.create( content: "Salt is the best ingredient."      , user: anton )
@@ -412,6 +414,15 @@ Post.create( content: "Free market solves all problems."         , user: frank )
 Post.create( content: "Workers control the means of production." , user: alice )
 Post.create( content: "Can't we all just get along?"             , user: anton )
 ```
+
+Reseed the database.
+
+```
+> rake db:seed
+```
+
+Why is deleting the old posts required?  Because the all the existing posts in the DB from before we added User to Post will
+have no User (nil).  The updated seeds supply a User for each Post now.
 
 ## Show User Post
 
